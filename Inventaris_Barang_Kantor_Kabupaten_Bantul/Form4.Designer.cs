@@ -35,6 +35,8 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             this.button4 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtKuantitasMsk = new System.Windows.Forms.TextBox();
+            this.barangMasukBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.invetarisDataSet = new Inventaris_Barang_Kantor_Kabupaten_Bantul.InvetarisDataSet();
             this.txtTglMsk = new System.Windows.Forms.TextBox();
             this.txtNamaBrgMsk = new System.Windows.Forms.TextBox();
             this.txtTotalHrgMsk = new System.Windows.Forms.TextBox();
@@ -59,16 +61,14 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             this.hargaSatuanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kuantitasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hargatotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.barangMasukBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.invetarisDataSet = new Inventaris_Barang_Kantor_Kabupaten_Bantul.InvetarisDataSet();
             this.barang_MasukTableAdapter = new Inventaris_Barang_Kantor_Kabupaten_Bantul.InvetarisDataSetTableAdapters.Barang_MasukTableAdapter();
             this.btnUpdateBrg = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barangMasukBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invetarisDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -87,7 +87,7 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             // 
             this.pictureBox1.Image = global::Inventaris_Barang_Kantor_Kabupaten_Bantul.Properties.Resources.logobantul;
             this.pictureBox1.Location = new System.Drawing.Point(31, 32);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(65, 89);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -98,7 +98,7 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             // 
             this.button4.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.button4.Location = new System.Drawing.Point(690, 22);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(94, 31);
             this.button4.TabIndex = 8;
@@ -110,7 +110,7 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             // 
             this.pictureBox2.Image = global::Inventaris_Barang_Kantor_Kabupaten_Bantul.Properties.Resources.home;
             this.pictureBox2.Location = new System.Drawing.Point(795, 22);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(26, 31);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -122,18 +122,28 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             // 
             this.txtKuantitasMsk.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.barangMasukBindingSource, "Kuantitas", true));
             this.txtKuantitasMsk.Location = new System.Drawing.Point(693, 96);
-            this.txtKuantitasMsk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtKuantitasMsk.Margin = new System.Windows.Forms.Padding(2);
             this.txtKuantitasMsk.Multiline = true;
             this.txtKuantitasMsk.Name = "txtKuantitasMsk";
             this.txtKuantitasMsk.Size = new System.Drawing.Size(117, 35);
             this.txtKuantitasMsk.TabIndex = 19;
             this.txtKuantitasMsk.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
+            // barangMasukBindingSource
+            // 
+            this.barangMasukBindingSource.DataMember = "Barang_Masuk";
+            this.barangMasukBindingSource.DataSource = this.invetarisDataSet;
+            // 
+            // invetarisDataSet
+            // 
+            this.invetarisDataSet.DataSetName = "InvetarisDataSet";
+            this.invetarisDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // txtTglMsk
             // 
             this.txtTglMsk.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.barangMasukBindingSource, "Tanggal_Masuk", true));
             this.txtTglMsk.Location = new System.Drawing.Point(501, 160);
-            this.txtTglMsk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTglMsk.Margin = new System.Windows.Forms.Padding(2);
             this.txtTglMsk.Multiline = true;
             this.txtTglMsk.Name = "txtTglMsk";
             this.txtTglMsk.Size = new System.Drawing.Size(117, 35);
@@ -144,7 +154,7 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             // 
             this.txtNamaBrgMsk.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.barangMasukBindingSource, "Nama_Barang", true));
             this.txtNamaBrgMsk.Location = new System.Drawing.Point(501, 96);
-            this.txtNamaBrgMsk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNamaBrgMsk.Margin = new System.Windows.Forms.Padding(2);
             this.txtNamaBrgMsk.Multiline = true;
             this.txtNamaBrgMsk.Name = "txtNamaBrgMsk";
             this.txtNamaBrgMsk.Size = new System.Drawing.Size(117, 35);
@@ -154,7 +164,7 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             // 
             this.txtTotalHrgMsk.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.barangMasukBindingSource, "Harga_total", true));
             this.txtTotalHrgMsk.Location = new System.Drawing.Point(316, 160);
-            this.txtTotalHrgMsk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTotalHrgMsk.Margin = new System.Windows.Forms.Padding(2);
             this.txtTotalHrgMsk.Multiline = true;
             this.txtTotalHrgMsk.Name = "txtTotalHrgMsk";
             this.txtTotalHrgMsk.Size = new System.Drawing.Size(117, 35);
@@ -164,7 +174,7 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             // 
             this.txtHrgStnMsk.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.barangMasukBindingSource, "Harga_Satuan", true));
             this.txtHrgStnMsk.Location = new System.Drawing.Point(154, 160);
-            this.txtHrgStnMsk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtHrgStnMsk.Margin = new System.Windows.Forms.Padding(2);
             this.txtHrgStnMsk.Multiline = true;
             this.txtHrgStnMsk.Name = "txtHrgStnMsk";
             this.txtHrgStnMsk.Size = new System.Drawing.Size(117, 35);
@@ -174,7 +184,7 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             // 
             this.txtKodeBrgMsk.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.barangMasukBindingSource, "Kode_Barang", true));
             this.txtKodeBrgMsk.Location = new System.Drawing.Point(316, 96);
-            this.txtKodeBrgMsk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtKodeBrgMsk.Margin = new System.Windows.Forms.Padding(2);
             this.txtKodeBrgMsk.Multiline = true;
             this.txtKodeBrgMsk.Name = "txtKodeBrgMsk";
             this.txtKodeBrgMsk.Size = new System.Drawing.Size(117, 35);
@@ -184,7 +194,7 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             // 
             this.txtNoMasuk.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.barangMasukBindingSource, "No_Masuk_Barang", true));
             this.txtNoMasuk.Location = new System.Drawing.Point(154, 96);
-            this.txtNoMasuk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNoMasuk.Margin = new System.Windows.Forms.Padding(2);
             this.txtNoMasuk.Multiline = true;
             this.txtNoMasuk.Name = "txtNoMasuk";
             this.txtNoMasuk.Size = new System.Drawing.Size(117, 35);
@@ -264,8 +274,8 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.button3.Location = new System.Drawing.Point(556, 224);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Location = new System.Drawing.Point(693, 224);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(91, 35);
             this.button3.TabIndex = 26;
@@ -277,7 +287,7 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             // 
             this.btnSaveMsk.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.btnSaveMsk.Location = new System.Drawing.Point(180, 224);
-            this.btnSaveMsk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSaveMsk.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveMsk.Name = "btnSaveMsk";
             this.btnSaveMsk.Size = new System.Drawing.Size(91, 35);
             this.btnSaveMsk.TabIndex = 27;
@@ -289,7 +299,7 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             // 
             this.button1.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.button1.Location = new System.Drawing.Point(425, 224);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 35);
             this.button1.TabIndex = 28;
@@ -311,11 +321,11 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             this.hargatotalDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.barangMasukBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(99, 312);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(722, 102);
+            this.dataGridView1.Size = new System.Drawing.Size(722, 160);
             this.dataGridView1.TabIndex = 29;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -375,16 +385,6 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             this.hargatotalDataGridViewTextBoxColumn.Name = "hargatotalDataGridViewTextBoxColumn";
             this.hargatotalDataGridViewTextBoxColumn.Width = 125;
             // 
-            // barangMasukBindingSource
-            // 
-            this.barangMasukBindingSource.DataMember = "Barang_Masuk";
-            this.barangMasukBindingSource.DataSource = this.invetarisDataSet;
-            // 
-            // invetarisDataSet
-            // 
-            this.invetarisDataSet.DataSetName = "InvetarisDataSet";
-            this.invetarisDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // barang_MasukTableAdapter
             // 
             this.barang_MasukTableAdapter.ClearBeforeFill = true;
@@ -404,7 +404,7 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.button5.Location = new System.Drawing.Point(693, 224);
+            this.button5.Location = new System.Drawing.Point(560, 224);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(91, 35);
@@ -443,15 +443,15 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             this.Controls.Add(this.button4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form4";
             this.Text = "Halaman Barang Masuk";
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barangMasukBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invetarisDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

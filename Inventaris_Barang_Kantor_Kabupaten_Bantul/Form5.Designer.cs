@@ -35,6 +35,8 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtKuantitasKlr = new System.Windows.Forms.TextBox();
+            this.barangKeluarBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.invetarisDataSet2 = new Inventaris_Barang_Kantor_Kabupaten_Bantul.InvetarisDataSet2();
             this.txtNamaBrgKlr = new System.Windows.Forms.TextBox();
             this.txtTglKlr = new System.Windows.Forms.TextBox();
             this.txtHrgTotal = new System.Windows.Forms.TextBox();
@@ -59,16 +61,14 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             this.hargaSatuanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kuantitasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hargatotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.barangKeluarBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.invetarisDataSet2 = new Inventaris_Barang_Kantor_Kabupaten_Bantul.InvetarisDataSet2();
             this.barang_KeluarTableAdapter = new Inventaris_Barang_Kantor_Kabupaten_Bantul.InvetarisDataSet2TableAdapters.Barang_KeluarTableAdapter();
             this.btnUpdateBrgKlr = new System.Windows.Forms.Button();
             this.btnDisplayKlr = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barangKeluarBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invetarisDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button4
@@ -126,6 +126,16 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             this.txtKuantitasKlr.Name = "txtKuantitasKlr";
             this.txtKuantitasKlr.Size = new System.Drawing.Size(117, 35);
             this.txtKuantitasKlr.TabIndex = 35;
+            // 
+            // barangKeluarBindingSource
+            // 
+            this.barangKeluarBindingSource.DataMember = "Barang_Keluar";
+            this.barangKeluarBindingSource.DataSource = this.invetarisDataSet2;
+            // 
+            // invetarisDataSet2
+            // 
+            this.invetarisDataSet2.DataSetName = "InvetarisDataSet2";
+            this.invetarisDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtNamaBrgKlr
             // 
@@ -261,7 +271,7 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             // btnCancelKlr
             // 
             this.btnCancelKlr.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.btnCancelKlr.Location = new System.Drawing.Point(565, 215);
+            this.btnCancelKlr.Location = new System.Drawing.Point(691, 215);
             this.btnCancelKlr.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelKlr.Name = "btnCancelKlr";
             this.btnCancelKlr.Size = new System.Drawing.Size(91, 35);
@@ -312,7 +322,7 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(697, 130);
+            this.dataGridView1.Size = new System.Drawing.Size(697, 165);
             this.dataGridView1.TabIndex = 45;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -372,16 +382,6 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             this.hargatotalDataGridViewTextBoxColumn.Name = "hargatotalDataGridViewTextBoxColumn";
             this.hargatotalDataGridViewTextBoxColumn.Width = 125;
             // 
-            // barangKeluarBindingSource
-            // 
-            this.barangKeluarBindingSource.DataMember = "Barang_Keluar";
-            this.barangKeluarBindingSource.DataSource = this.invetarisDataSet2;
-            // 
-            // invetarisDataSet2
-            // 
-            this.invetarisDataSet2.DataSetName = "InvetarisDataSet2";
-            this.invetarisDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // barang_KeluarTableAdapter
             // 
             this.barang_KeluarTableAdapter.ClearBeforeFill = true;
@@ -401,7 +401,7 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             // btnDisplayKlr
             // 
             this.btnDisplayKlr.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.btnDisplayKlr.Location = new System.Drawing.Point(691, 215);
+            this.btnDisplayKlr.Location = new System.Drawing.Point(563, 215);
             this.btnDisplayKlr.Margin = new System.Windows.Forms.Padding(2);
             this.btnDisplayKlr.Name = "btnDisplayKlr";
             this.btnDisplayKlr.Size = new System.Drawing.Size(91, 35);
@@ -446,9 +446,9 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             this.Load += new System.EventHandler(this.Form5_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barangKeluarBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invetarisDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
