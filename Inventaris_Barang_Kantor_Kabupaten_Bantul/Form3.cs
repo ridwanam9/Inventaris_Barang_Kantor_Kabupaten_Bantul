@@ -13,9 +13,7 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
 {
     public partial class Form3 : Form
     {
-        //DataTable dt;
-        //DataRow dr;
-        //String code;
+        
         public Form3()
         {
             InitializeComponent();
@@ -77,6 +75,7 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             cmd.Parameters.AddWithValue("@Id_Pengurus_Barang", int.Parse(txtIdPengurusBrg.Text));
             cmd.Parameters.AddWithValue("@Keadaan", txtKeadaanBrg.Text);
             cmd.Parameters.AddWithValue("@Keterangan", txtKeterangan.Text);
+
             cmd.Parameters.AddWithValue("@Harga_Satuan", decimal.Parse(txtHargaStn.Text));
             cmd.Parameters.AddWithValue("@Kuantitas", int.Parse(txtKuantitasBrg.Text));
             cmd.Parameters.AddWithValue("@Harga_Total", decimal.Parse(txtTotalHrg.Text));
@@ -85,64 +84,6 @@ namespace Inventaris_Barang_Kantor_Kabupaten_Bantul
             con.Close();
             MessageBox.Show("Data Berhasil Disimpan");
 
-            /*
-            btnSaveBrg.Enabled = true;
-            btnCancelBrg.Enabled = true;
-            txtKodeBrg.Enabled = true;
-            txtNamaBrg.Enabled = true;
-            txtIdPengurusBrg.Enabled = true;
-            txtKeadaanBrg.Enabled = true;
-            txtKeterangan.Enabled = true;
-            txtHargaStn.Enabled = true;
-            txtKuantitasBrg.Enabled = true;
-            txtTotalHrg.Enabled = true;
-
-            txtKodeBrg.Text = "";
-            txtNamaBrg.Text = "";
-            txtIdPengurusBrg.Text = "";
-            txtKeadaanBrg.Text = "";
-            txtKeterangan.Text = "";
-            txtHargaStn.Text = "";
-            txtKuantitasBrg.Text = "";
-            txtTotalHrg.Text = "";
-
-            //String HargaStn = txtHargaStn.ToDecimal();
-            //System.Convert.ToDecimal(txtHargaStn);
-            decimal HargaStn;
-            decimal TotalHrg;
-            decimal.TryParse(txtHargaStn.Text, out HargaStn);
-            decimal.TryParse(txtHargaStn.Text, out TotalHrg);
-
-
-            dt = invetarisDataSet1.Tables["Barang"];
-            dr = dt.NewRow();
-            dr[0] = txtKodeBrg.Text;
-            dr[1] = txtNamaBrg.Text;
-            dr[2] = txtIdPengurusBrg.Text;
-            dr[3] = txtKeadaanBrg.Text;
-            dr[4] = txtKeterangan.Text;
-            //dr[5] = System.Convert.ToInt32(txtHargaStn);
-            dr[5] = HargaStn;
-            dr[6] = txtKuantitasBrg.Text;
-            dr[7] = TotalHrg;
-            dt.Rows.Add(dr);
-            barangTableAdapter.Update(invetarisDataSet1);
-            txtKodeBrg.Text = System.Convert.ToString(dr[0]);
-            txtKodeBrg.Enabled = false;
-            txtNamaBrg.Enabled = false;
-            txtIdPengurusBrg.Text = System.Convert.ToString(dr[2]);
-            txtKeadaanBrg.Enabled = false;
-            txtKeterangan.Enabled = false;
-            txtHargaStn.Enabled = false;
-            txtKuantitasBrg.Enabled = false;
-            txtTotalHrg.Enabled = false;
-            //txtHargaStn.Text = System.Convert.ToString(dr[5]);
-            //txtKuantitasBrg.Text = System.Convert.ToString(dr[6]);
-            //txtTotalHrg.Text = System.Convert.ToString(dr[7]);
-            this.barangTableAdapter.Fill(this.invetarisDataSet1.Barang);
-            
-            btnSaveBrg.Enabled = false; 
-            */
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
